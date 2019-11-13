@@ -106,11 +106,11 @@ const Home = ({ location: { pathname } }) => {
       <RightColumn>
         <StyledH1>Crate</StyledH1>
         <Tabs>
-          <Tab active onClick={() => alert("i dont do nothing :(")}>
+          <Tab active onClick={() => {}}>
             One
           </Tab>
-          <Tab onClick={() => alert("me neither :/")}>Two</Tab>
-          <Tab onClick={() => alert("I see a pattern in here..")}>Three</Tab>
+          <Tab onClick={() => {}}>Two</Tab>
+          <Tab onClick={() => {}}>Three</Tab>
         </Tabs>
         <StyledImg src={crate} alt="beer crate" />
       </RightColumn>
