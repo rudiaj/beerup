@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React, { memo, useContext } from "react";
 import styled from "styled-components";
 import { isEmpty } from "lodash";
+
 import pattern from "../../assets/pattern.png";
 import close from "../../assets/Close icon@2x.png";
-
-import { ModalContext } from "../../utils";
+import { Context } from "../../utils";
 import Table from "./Table";
 import Button from "./Button";
+import FavouriteButton from "./FavouriteButton";
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -17,6 +18,7 @@ const ModalOverlay = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
   background-image: url(${pattern});
   background-repeat: repeat;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,14 +29,17 @@ const StyledModal = styled.div`
   max-width: 700px;
   background-color: white;
   padding:40px
-  max-height: calc(100vh - 200px);
   position: relative;
   border-radius: 4px;
   margin: 0 15px;
   width:100%;
 `;
 
-const ModalHeader = styled.div``;
+const ModalHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 const ModalBody = styled.div``;
 
@@ -58,7 +63,7 @@ const StyledCloseButton = styled.button`
 const StyledImg = styled.img`
   width: 115px;
   margin-right: 100px;
-  height: auto;
+  height: 100%;
   @media (max-width: 768px) {
     margin-right: 0;
     width: 70px;
@@ -109,6 +114,17 @@ const StyledButton = styled(Button)`
   }
 `;
 
+const StyledFavouriteButton = styled(FavouriteButton)`
+  position: initial;
+  top: initial;
+  left: initial;
+  padding: 0;
+  img {
+    height: 30px;
+    width: auto;
+  }
+`;
+
 const Info = styled.div`
   display: flex;
   flex-direction: column;
@@ -123,8 +139,8 @@ const Modal = () => {
     show,
     setShow,
     beer,
-    beer: { name, image_url, ibu, abv, description }
-  } = useContext(ModalContext);
+    beer: { id, name, image_url, ibu, abv, description }
+  } = useContext(Context);
 
   if (!show) return null;
 
@@ -133,6 +149,7 @@ const Modal = () => {
       {isEmpty(beer) ? null : (
         <StyledModal>
           <ModalHeader>
+            <StyledFavouriteButton id={id} />
             <StyledCloseButton type="button" onClick={() => setShow(false)}>
               <img src={close} alt="close" />
             </StyledCloseButton>
@@ -159,4 +176,4 @@ Modal.defaultProps = {};
 
 Modal.propTypes = {};
 
-export default Modal;
+export default memo(Modal);

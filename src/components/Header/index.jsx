@@ -16,6 +16,14 @@ const StyledContainer = styled(Container)`
   background-image: url(${beers});
   background-position: bottom -80px right 15px;
   background-repeat: no-repeat;
+  @media (max-width: 1060px) {
+    background-position: ${props =>
+      props.isFavourites ? "bottom 130px center" : " bottom -20% center"};
+    background-size: 300px;
+  }
+  @media (max-width: 768px) {
+    background-size: 50%;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -23,6 +31,10 @@ const Wrapper = styled.div`
   align-items: flex-start;
   display: flex;
   flex-direction: column;
+  @media (max-width: 1060px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const StyledSpan = styled.span`
@@ -35,17 +47,21 @@ const StyledSpan = styled.span`
 const Heading = styled.h1`
   font-size: 4.0625rem;
   text-transform: uppercase;
-  max-width: 50%;
   margin-bottom: 65px;
+  max-width: 50%;
   transition: all 0.2s ease-in-out;
   transform: translateY(${props => (props.isFavourites ? "-130px" : 0)});
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    max-width: initial;
+  }
 `;
 
 const Header = ({ location: { pathname } }) => {
   const isFavourites = pathname === paths.routes.FAVOURITES;
 
   return (
-    <StyledContainer>
+    <StyledContainer isFavourites={isFavourites}>
       <Wrapper>
         {!isFavourites && <StyledSpan>The beerster pro 2.0</StyledSpan>}
         <Heading isFavourites={isFavourites}>

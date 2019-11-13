@@ -13,6 +13,9 @@ const StyledH1 = styled.h1`
   font-size: 2.125rem;
   color: ${props => props.theme.colors.black};
   margin-bottom: 30px;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export { Container, StyledH1 };

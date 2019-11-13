@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
@@ -41,4 +41,4 @@ Button.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default Button;
+export default memo(Button);

@@ -8,19 +8,68 @@ import { helpers } from "../../utils";
 import { Grid } from "./components";
 import { paths } from "../../constants";
 import { StyledH1 } from "../styles";
+import crate from "../../assets/crate.svg";
 
 const LeftColumn = styled.div`
-  margin-rigth: 15px;
+  margin-right: 15px;
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 25px;
+    overflow: auto;
+  }
 `;
 
 const RightColumn = styled.div`
   flex: 0 0 265px;
-  background: red;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const Tabs = styled.div`
+  display: flex;
+  margin-bottom: 28px;
+`;
+
+const Tab = styled.button`
+  outline: 0;
+  border: 0;
+  font-size: 0.75rem;
+  background: transparent;
+  margin-right: 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+  &:last-of-type {
+    margin-right: 0;
+  }
+  color: ${props =>
+    props.active ? props.theme.colors.black : "rgba(0,0,0,0.3)"};
+  padding: 5px 0;
+
+  border-bottom: ${props =>
+    props.active ? `3px solid ${props.theme.colors.orange}` : "0"};
 `;
 
 const ColumnWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const StyledImg = styled.img`
+  width: 100%;
+  max-width: 265px;
+  height: auto;
+  @media (max-width: 768px) {
+    transform: rotate(90deg);
+    max-width: 100%;
+    width: auto;
+    margin: 0 15px;
+  }
 `;
 
 const Home = ({ location: { pathname } }) => {
@@ -56,6 +105,14 @@ const Home = ({ location: { pathname } }) => {
       </LeftColumn>
       <RightColumn>
         <StyledH1>Crate</StyledH1>
+        <Tabs>
+          <Tab active onClick={() => alert("i dont do nothing :(")}>
+            One
+          </Tab>
+          <Tab onClick={() => alert("me neither :/")}>Two</Tab>
+          <Tab onClick={() => alert("I see a pattern in here..")}>Three</Tab>
+        </Tabs>
+        <StyledImg src={crate} alt="beer crate" />
       </RightColumn>
     </ColumnWrapper>
   );

@@ -1,11 +1,11 @@
-import React, { memo, useState, useMemo } from "react";
+import React, { memo, useState, useMemo, useEffect } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 
 import { paths } from "../../constants";
 import { Container } from "../styles";
-import { ModalContext } from "../../utils";
+import { Context } from "../../utils";
 import { Modal } from "../global";
 
 const StyledMain = styled.main`
@@ -23,20 +23,30 @@ const StyledMain = styled.main`
 const Main = ({ children, location: { pathname } }) => {
   const [show, setShow] = useState(false);
   const [beer, setBeer] = useState({});
-  const providerShow = useMemo(() => ({ show, setShow, beer, setBeer }), [
-    show,
-    setShow,
-    beer,
-    setBeer
-  ]);
+  const [favourites, setFavourites] = useState(
+    JSON.parse(localStorage.getItem("favorites"))
+      ? JSON.parse(localStorage.getItem("favorites"))
+      : []
+  );
+
+  const providerShow = useMemo(
+    () => ({ show, setShow, beer, setBeer, favourites, setFavourites }),
+    [show, setShow, beer, setBeer, favourites, setFavourites]
+  );
+
+  useEffect(() => {
+    if (!localStorage.getItem("favorites")) {
+      localStorage.setItem("favorites", "[]");
+    }
+  }, []);
 
   return (
-    <ModalContext.Provider value={providerShow}>
+    <Context.Provider value={providerShow}>
       <Modal />
       <StyledMain pathname={pathname}>
         <Container>{children}</Container>
       </StyledMain>
-    </ModalContext.Provider>
+    </Context.Provider>
   );
 };
 

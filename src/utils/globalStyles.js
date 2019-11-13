@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
         background-color: black;
         background-image: url(${pattern});
         background-repeat: repeat;
+        background-attachment:fixed;
     }
     * {
         margin: 0;

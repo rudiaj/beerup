@@ -2,7 +2,7 @@ export default {
   generateIds: () => {
     const favourites = JSON.parse(localStorage.getItem("favorites"));
 
-    if (!favourites.length) {
+    if (!favourites) {
       return null;
     }
 

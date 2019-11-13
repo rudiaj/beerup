@@ -2,8 +2,7 @@ import React, { memo } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import FavouriteButton from "./FavouriteButton";
-import { Table } from "../../global";
+import { Table, FavouriteButton } from "../../global";
 
 const StyledCard = styled.article`
   position: relative;
@@ -20,6 +19,9 @@ const StyledCard = styled.article`
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
       rgba(0, 0, 0, 0.22) 0px 10px 10px;
   }
+  @media (max-width: 768px) {
+    grid-row: 1;
+  }
 `;
 
 const StyledImg = styled.img`
@@ -35,23 +37,15 @@ const TextContainer = styled.div`
 
 const StyledTitle = styled.span`
   margin-bottom: 15px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   color: ${props => props.theme.colors.black};
 `;
 
-const Card = ({
-  item: { name, image_url, id, ibu, abv },
-  onFavouriteClick,
-  favourites,
-  onClick
-}) => {
+const Card = ({ item: { name, image_url, id, ibu, abv }, onClick }) => {
   return (
     <StyledCard onClick={onClick}>
-      <FavouriteButton
-        favourite={favourites.includes(id)}
-        onClick={onFavouriteClick}
-        id={id}
-      />
+      <FavouriteButton id={id} />
       <StyledImg src={image_url} />
       <TextContainer>
         <StyledTitle>{name}</StyledTitle>
@@ -71,9 +65,7 @@ Card.propTypes = {
     abv: PropTypes.number,
     ibu: PropTypes.number
   }).isRequired,
-  onClick: PropTypes.func.isRequired,
-  onFavouriteClick: PropTypes.func.isRequired,
-  favourites: PropTypes.arrayOf(PropTypes.number).isRequired
+  onClick: PropTypes.func.isRequired
 };
 
 export default memo(Card);

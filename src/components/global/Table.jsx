@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
@@ -50,4 +50,4 @@ Table.propTypes = {
   abv: PropTypes.number.isRequired
 };
 
-export default Table;
+export default memo(Table);
