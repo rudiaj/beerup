@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="17px" viewBox="0 0 48 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>cap</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-267.000000, -173.000000)">
+        <g id="cap" transform="translate(267.000000, 173.000000)" fill="#F2CD30" fill-rule="nonzero">
+            <path d="M48,9.21969834 L48,14.7198486 C46.6883236,15.7996515 45.5196649,17 42.9281847,17 C38.1922566,17 38.1922566,12.9995193 33.4563285,12.9995193 C28.7285729,12.9995193 28.7285729,17 23.9926448,17 C19.2567167,17 19.2567167,12.9995193 14.5281438,12.9995193 C9.79221575,12.9995193 9.79221575,17 5.06446011,17 C2.48033507,17 1.30432118,15.8098672 0,14.7300643 L0,9.21969834 C5.80686678e-15,4.13022054 3.30411687,0 7.3756257,0 L40.6235571,0 C44.6958831,0 48,4.13022054 48,9.21969834 Z" transform="translate(24.000000, 8.500000) scale(1, -1) translate(-24.000000, -8.500000) "></path>
+        </g>
+    </g>
+</svg>

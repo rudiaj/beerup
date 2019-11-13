@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="52px" viewBox="0 0 176 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>button ghost down</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-296.000000, -1557.000000)">
+        <g id="button-ghost-down" transform="translate(298.000000, 1559.000000)" fill="#FFC80A">
+            <rect id="Rectangle" stroke="#FFC80A" stroke-width="3" fill-opacity="0.32" x="0" y="0" width="172" height="48" rx="24"></rect>
+            <text id="Join-Beerup" font-family="Montserrat-Bold, Montserrat" font-size="12" font-weight="bold" letter-spacing="2.4000001">
+                <tspan x="33" y="29">Join Beerup</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

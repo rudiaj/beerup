@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="168px" height="168px" viewBox="0 0 168 168" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>card wireframe</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-472.000000, -417.000000)">
+        <g id="card-wireframe" transform="translate(472.000000, 417.000000)">
+            <rect id="card" stroke="#EAEAEA" x="0.5" y="0.5" width="167" height="167" rx="4"></rect>
+            <circle id="thingy" fill="#EAEAEA" cx="16" cy="15" r="4"></circle>
+            <g id="beer/wireframe" transform="translate(20.000000, 32.000000)" stroke="#EAEAEA">
+                <path d="M8.25757576,6.5 L9.22727273,6.5 L9.22727273,24.3636364 C9.22727273,28.7632895 7.63327134,33.0139599 4.74034869,36.3287671 C2.00640431,39.4614117 0.5,43.4784899 0.5,47.6363636 L0.5,106 C0.5,109.037566 2.96243388,111.5 6,111.5 L26,111.5 C29.0375661,111.5 31.5,109.037566 31.5,106 L31.5,47.6363636 C31.5,43.4784899 29.9935957,39.4614117 27.2596513,36.3287671 C24.3667287,33.0139599 22.7727273,28.7632895 22.7727273,24.3636364 L22.7727273,6.5 L23.7424242,6.5 L23.7424242,3 C23.7424242,1.61928813 22.6231361,0.5 21.2424242,0.5 L10.7575758,0.5 C9.37686388,0.5 8.25757576,1.61928813 8.25757576,3 L8.25757576,6.5 Z" id="beer"></path>
+            </g>
+            <rect id="block" fill="#EAEAEA" x="68" y="90" width="34" height="12"></rect>
+            <rect id="block" fill="#EAEAEA" x="68" y="115" width="34" height="12"></rect>
+            <rect id="block" fill="#D2D2D2" x="68" y="43" width="64" height="12"></rect>
+            <rect id="block" fill="#D2D2D2" x="68" y="61" width="44" height="12"></rect>
+        </g>
+    </g>
+</svg>
